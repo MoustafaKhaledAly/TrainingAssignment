@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" verbose="1" name="com.sumerge.training.tests" annotations="JDK" parallel="tests">
+    <test name="ValidSignUpTest">
+        <classes>
+            <class name="com.sumerge.training.tests.ValidSignUpTest"/>
+        </classes>
+    </test>
+
+    <test name="ValidLogInTest">
+        <classes>
+            <class name="com.sumerge.training.tests.ValidLoginTest"/>
+        </classes>
+    </test>
+
+    <test name="InVaildLoginTest">
+        <classes>
+            <class name="com.sumerge.training.tests.InVaildLoginTest"/>
+        </classes>
+    </test>
+</suite>
