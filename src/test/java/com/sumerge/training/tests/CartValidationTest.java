@@ -15,8 +15,8 @@ import org.testng.annotations.*;
 
 import java.io.IOException;
 public class CartValidationTest {
-    public static int delay = 12;
-    // //////////PreDefined Variables For LogInSheet\\\\\\\\\\\\\\\\\\\\
+    public static int delay = 10;
+    // //////////PreDefined Variables For LogIgnSheet\\\\\\\\\\\\\\\\\\\\
     public static int test_Cases_Start_Row_CartValidation = 1;
     public static int test_Cases_Start_Column_CartValidation = 2;
     public static int CartValidationSheet = 3;
