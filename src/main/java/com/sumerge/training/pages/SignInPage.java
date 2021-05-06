@@ -1,5 +1,6 @@
 package com.sumerge.training.pages;
 
+import com.sumerge.training.utilities.MyBrowser;
 import org.openqa.selenium.By;
  import org.openqa.selenium.WebDriver;
  import org.openqa.selenium.WebElement;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  import org.openqa.selenium.support.ui.WebDriverWait;
 
  public class SignInPage {
+     public static int delay = 7;
      @FindBy(xpath="//*[@id=\"email\"]")
       WebElement EmailAddress;
      @FindBy(xpath="//*[@id=\"passwd\"]")
@@ -25,28 +27,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
      public void EnterEmailAddress(String Email){
-         try{
-             EmailAddress.sendKeys(Email);
-         }catch(Exception e){
 
-         }
+             EmailAddress.sendKeys(Email);
+
 
 
      }
      public void enterPassword(String Pass){
-         try{
              Password.sendKeys(Pass);
-         }catch(Exception e){
 
-         }
 
      }
 
-     public void clicksSignInButton(){
-         try{
+     public void clicksSignInButton(MyBrowser browser){
              SignInButton.click();
-         }catch(Exception e){
-         }
+             String TextMessagePath="//*[@id=\"center_column\"]/p";
+         browser.delayExecution(delay,TextMessagePath);
 
 
      }

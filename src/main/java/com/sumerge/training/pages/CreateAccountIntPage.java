@@ -1,5 +1,6 @@
 package com.sumerge.training.pages;
 
+import com.sumerge.training.utilities.MyBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,29 +15,29 @@ public class CreateAccountIntPage {
   WebElement EmailAddress;
     @FindBy(xpath="//*[@id=\"SubmitCreate\"]/span")
     WebElement CreateAccountButton;
+    public static int delay = 7;
 
     public CreateAccountIntPage(WebDriver driver){
+
         PageFactory.initElements(driver, this);
     }
 
 
     public void EnterEmailAddress(String Email){
-        try{
-            EmailAddress.sendKeys(Email);
-        }catch(Exception e){
 
-        }
+            EmailAddress.sendKeys(Email);
+
 
 
     }
 
 
-    public void clickCreateAccountButton(){
-        try{
-            CreateAccountButton.click();
-        }catch(Exception e){
-        }
+    public void clickCreateAccountButton(MyBrowser browser){
 
+            CreateAccountButton.click();
+
+        String FirstNamePath="//*[@id=\"customer_firstname\"]";
+        browser.delayExecution(delay,FirstNamePath);
 
     }
 

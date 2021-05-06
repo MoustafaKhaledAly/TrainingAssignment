@@ -24,9 +24,9 @@ public class Excel_Read {
 	public  int getColNum(int sheet_Num){
 		int Col_Num=0;
 		try{
-		 Col_Num= 12;
+			Col_Num= workbook.getSheetAt(sheet_Num).getRow(0).getLastCellNum();
 		}catch(Exception e){
-
+			System.out.println(e.getMessage());
 		}
 		return Col_Num;
 	}

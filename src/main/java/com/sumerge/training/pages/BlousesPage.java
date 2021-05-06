@@ -1,5 +1,6 @@
 package com.sumerge.training.pages;
 
+import com.sumerge.training.utilities.MyBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,27 +11,36 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BlousesPage {
-    public static int delay = 7;
+
     @FindBy(xpath="//*[@class=\"product_img_link\"]")
     WebElement Item;
     @FindBy(xpath="//*[@class=\"right-block\"]//h5//a")
     WebElement ItemName;
+    @FindBy(xpath="//*[@class=\"button ajax_add_to_cart_button btn btn-default\"]")
+    WebElement AddtoCartButton;
+
+    @FindBy(xpath="//*[@class=\"btn btn-default button button-medium\"]")
+    WebElement proceedtoCheckOutButton;
+    public static int delay = 7;
+    public static String popupImage="//img[@class='layer_cart_img img-responsive']";
+    public static String trashbutton="//i[@class='icon-trash']";
+
+
+
 
     Actions actions;
     public  BlousesPage(WebDriver driver){
         PageFactory.initElements(driver, this);
         actions = new Actions(driver);
     }
-    public void addItemToCart(WebDriver driver){
+    public void addItemToCart(MyBrowser browser){
         actions.moveToElement(Item);
-        WebElement AddtoCartButton = driver.findElement(By.xpath("//*[@class=\"button ajax_add_to_cart_button btn btn-default\"]"));
         actions.moveToElement(AddtoCartButton);
         actions.click().build().perform();
-        WebDriverWait wait = new WebDriverWait(driver, delay);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@class=\"btn btn-default button button-medium\"]")));
-        WebElement proceedtoCheckOutButton = driver.findElement(By.xpath("//*[@class=\"btn btn-default button button-medium\"]"));
-        proceedtoCheckOutButton.click();
 
+        browser.delayExecution(delay,popupImage);
+        proceedtoCheckOutButton.click();
+        browser.delayExecution(delay,trashbutton);
     }
     public String getItemName(){
         return ItemName.getText();

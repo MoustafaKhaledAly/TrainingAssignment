@@ -1,5 +1,6 @@
 package com.sumerge.training.pages;
 
+import com.sumerge.training.utilities.MyBrowser;
 import org.openqa.selenium.By;
  import org.openqa.selenium.WebDriver;
  import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
  public class CreateAccountPage {
+     public static int delay = 7;
      @FindBy(xpath="//*[@id=\"customer_firstname\"]")
        WebElement firstName ;
      @FindBy(xpath="//*[@id=\"customer_lastname\"]")
@@ -43,46 +45,44 @@ import org.openqa.selenium.support.ui.Select;
          }
      }
      public void enterFirstName(String Name){
-         try{
+        try{
              firstName.sendKeys(Name);
-         }catch(Exception e){
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
-
-         }
 
      }
      public void enterLastName(String Name){
          try{
              lastName.sendKeys(Name);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
 
      }
      public void enterPassword(String Pass){
          try{
              password.sendKeys(Pass);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
 
 
      public void enterAddress(String addr){
          try{
              address.sendKeys(addr);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
 
      public void enterCity(String cityy){
          try{
              city.sendKeys(cityy);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
 
      }
@@ -90,10 +90,9 @@ import org.openqa.selenium.support.ui.Select;
      public void selectState(String State){
          try{
              state.selectByVisibleText(State);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
 
 
@@ -104,37 +103,38 @@ import org.openqa.selenium.support.ui.Select;
      public void enterZipCode(String code){
          try{
              zipCode.sendKeys(code);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
 
      public void enterMobileNum(String Num){
          try{
              mobileNum.sendKeys(Num);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
      public void enterAliasEmailAddress(String Email){
          try{
              aliasEmailAddress.clear();
              aliasEmailAddress.sendKeys(Email);
-         }catch(Exception e){
-
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
-
      }
 
 
-     public void clickRegisterButton(){
+     public void clickRegisterButton(MyBrowser browser){
          try{
              registerButton.click();
-         }catch(Exception e){
-
+             String TextMessagePath="\t//*[@id=\"center_column\"]/p";
+             browser.delayExecution(delay,TextMessagePath);
+         }catch (Exception e){
+             System.out.println(e.getMessage());
          }
+
+
 
      }
 
