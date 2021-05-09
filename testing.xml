@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite thread-count="3" verbose="1" name="com.sumerge.training.tests" annotations="JDK" parallel="tests">
+<suite thread-count="1" verbose="1" name="com.sumerge.training.tests" annotations="JDK" parallel="tests">
     <test name="ValidSignUpTest">
         <classes>
             <class name="com.sumerge.training.tests.ValidSignUpTest"/>
@@ -16,6 +16,11 @@
     <test name="InVaildLoginTest">
         <classes>
             <class name="com.sumerge.training.tests.InVaildLoginTest"/>
+        </classes>
+    </test>
+    <test name="CartValidation">
+        <classes>
+            <class name="com.sumerge.training.tests.CartValidationTest"/>
         </classes>
     </test>
 </suite>

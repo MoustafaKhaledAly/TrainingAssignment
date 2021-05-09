@@ -46,5 +46,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
      }
+     public String getSuccessMessage(MyBrowser browser){
+         try {
+             return browser.driver.findElement(By.xpath("//*[@id=\"center_column\"]/p")).getText();
+         }catch (Exception E){
+             return E.getMessage();
+         }
+
+     }
+     public String getErrorMessage(MyBrowser browser){
+         try {
+             return browser.driver.findElement(By.xpath("//*[@class=\"alert alert-danger\"]//ol//li")).getText();
+         }catch (Exception E){
+             return E.getMessage();
+         }
+     }
 
  }

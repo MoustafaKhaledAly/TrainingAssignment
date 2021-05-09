@@ -137,6 +137,14 @@ import org.openqa.selenium.support.ui.Select;
 
 
      }
+     public String getMessage(MyBrowser browser){
+        try {
+            return  browser.driver.findElement(By.xpath("\t//*[@id=\"center_column\"]/p")).getText();
+        }catch (Exception e){
+            return  e.getMessage();
+        }
+
+     }
 
  }
 

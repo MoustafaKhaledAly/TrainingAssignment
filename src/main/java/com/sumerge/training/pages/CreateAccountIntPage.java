@@ -27,8 +27,6 @@ public class CreateAccountIntPage {
 
             EmailAddress.sendKeys(Email);
 
-
-
     }
 
 
