@@ -1,0 +1,13 @@
+com\sumerge\training\utilities\StaticProvider.class
+com\sumerge\training\utilities\MyBrowser.class
+com\sumerge\training\pages\CreateAccountPage.class
+com\sumerge\training\pages\HomePage.class
+com\sumerge\training\utilities\BaseReport.class
+com\sumerge\training\pages\CartPage.class
+com\sumerge\training\pages\SignInPage.class
+com\sumerge\training\pages\AccountHomePage.class
+com\sumerge\training\utilities\ExcelFile.class
+com\sumerge\training\pages\BlousesPage.class
+com\sumerge\training\pages\CreateAccountIntPage.class
+com\sumerge\training\utilities\Excel_Write.class
+com\sumerge\training\utilities\Excel_Read.class

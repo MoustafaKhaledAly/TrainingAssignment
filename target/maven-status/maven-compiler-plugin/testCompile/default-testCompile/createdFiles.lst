@@ -1,0 +1,4 @@
+com\sumerge\training\tests\InVaildLoginTest.class
+com\sumerge\training\tests\ValidLoginTest.class
+com\sumerge\training\tests\ValidSignUpTest.class
+com\sumerge\training\tests\CartValidationTest.class
